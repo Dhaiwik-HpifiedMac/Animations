@@ -1,0 +1,29 @@
+import pygame
+import time
+from pygame.locals import *
+pygame.init()
+screen = pygame.display.set_mode((640,480))
+pygame.display.set_caption("Shapes!!")
+white = (255,255,255)
+red = (255,0,0)
+orange = (255,69,0)
+yellow = (255,255,0)
+green = (0,255,0)
+blue = (0,0,255)
+black = (0,0,0)
+color = white
+thickness = 1
+x = 0
+
+
+while True:
+    screen.fill(black)
+    pygame.draw.rect(screen, color, (x, 0, 50, 50), 0)
+    x+=5
+    if(x>640):
+        x = 0
+    pygame.display.update()
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            exit()
