@@ -33,4 +33,95 @@ while True:
 
 
 
-gfff
+import pygame
+import time
+from pygame.locals import *
+pygame.init()
+screen = pygame.display.set_mode((640,480))
+pygame.display.set_caption("Shapes!!")
+white = (255,255,255)
+red = (255,0,0)
+orange = (255,69,0)
+yellow = (255,255,0)
+green = (0,255,0)
+blue = (0,0,255)
+black = (0,0,0)
+color = white
+thickness = 1
+x = 4
+while True:
+    screen.fill(black)
+    pygame.draw.circle(screen, color, (320, 240), x, thickness)
+    if(x == 4):
+        z = 4
+    elif(x>200):
+        z = -4
+    x+=z
+
+    pygame.display.update()
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            exit()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import pygame
+import time
+from pygame.locals import *
+pygame.init()
+screen = pygame.display.set_mode((400,400))
+pygame.display.set_caption("Shapes!!")
+white = (255,255,255)
+red = (255,0,0)
+orange = (255,69,0)
+yellow = (255,255,0)
+green = (0,255,0)
+blue = (0,0,255)
+black = (0,0,0)
+color = white
+thickness = 0
+x = 0
+y = 0
+while True:
+    screen.fill((0,0,0))
+    for i in range(16):
+        pygame.draw.rect(screen, white, (x, y, 100, 100), thickness)
+        white, black = black, white
+        x+=100
+        if(x == 400):
+            y+=100
+            x = 0
+            white, black = black, white
+    time.sleep(1)
+    y = 0
+    white, black = black, white
+    pygame.display.update()
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            exit()
